@@ -25,11 +25,11 @@ pre : " <b> 6.1 </b> "
    1. ចូលទៅកាន់ System Manager Console នៅ **us-west-2**។
    2. នៅរបារនាំផ្លូវខាងឆ្វេង ជ្រើសរើស **Fleet Manager** យើងនឹងឃើញ *managed EC2 instance* មួយដែលមានទម្រង់ឈ្មោះដូចខាងក្រោម - `GuardDuty-Example: Compromised Instance: Scenario 3` ដែលមានស្ថានភាព **SSM Agent ping status** ជា `Online`។
 
-![6-system-manager-fleet-manager](/images/6-system-manager-fleet-manager.png?featherlight=false&width=90pc)
+![6-system-manager-fleet-manager](../../../images/6-system-manager-fleet-manager.png?featherlight=false&width=90pc)
 
    3. ធ្វើការប្រើប្រាស់មុខងារ **Session Manager** ដោយចុចប៊ូតុង `Instance actions` និងជ្រើសរើស `Start Session`។
 
-![system-manager-fleet-manager-start-session](/images/6-system-manager-fleet-manager-start-session.png?featherlight=false&width=90pc)
+![system-manager-fleet-manager-start-session](../../images/6-system-manager-fleet-manager-start-session.png?featherlight=false&width=90pc)
 
    4. អនុវត្តពាក្យបញ្ជាសាកសួរទិន្នន័យ **Metadata**:
 
