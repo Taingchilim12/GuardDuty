@@ -25,7 +25,7 @@ pre : " <b> 2. </b> "
 1. ចូលទៅក្នុង AWS Console, ចូលទៅកាន់សេវាកម្ម [GuardDuty](https://us-west-2.console.aws.amazon.com/guardduty/home)។
 2. ចាប់ផ្តើមដោយជ្រើសរើស **Get Started**។
 
-![guardduty-get-started](../images/2-guardduty-get-started.png?featherlight=false&width=90pc)
+![guardduty-get-started](../../images/2-guardduty-get-started.png?featherlight=false&width=90pc)
 
 3. សម្រាប់គណនីថ្មី AWS នឹងផ្តល់ឱ្យយើង 30 ថ្ងៃសាកល្បង, ដើម្បីចាប់ផ្តើមប្រើប្រាស់ សូមចុចប៊ូតុង `Enable GuardDuty`។
 
