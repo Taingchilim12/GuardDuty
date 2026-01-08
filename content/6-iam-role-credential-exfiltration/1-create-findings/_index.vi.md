@@ -29,7 +29,7 @@ pre : " <b> 6.1 </b> "
 
    3. ធ្វើការប្រើប្រាស់មុខងារ **Session Manager** ដោយចុចប៊ូតុង `Instance actions` និងជ្រើសរើស `Start Session`។
 
-![system-manager-fleet-manager-start-session](../../images/6-system-manager-fleet-manager-start-session.png?featherlight=false&width=90pc)
+![system-manager-fleet-manager-start-session](../../../images/6-system-manager-fleet-manager-start-session.png?featherlight=false&width=90pc)
 
    4. អនុវត្តពាក្យបញ្ជាសាកសួរទិន្នន័យ **Metadata**:
 
@@ -42,7 +42,7 @@ pre : " <b> 6.1 </b> "
    2. **Secret Access Key**
    3. **Session Token**
 
-![system-manager-instance-session-start](/images/6-system-manager-instance-session-start.png?featherlight=false&width=90pc)
+![system-manager-instance-session-start](../../../images/6-system-manager-instance-session-start.png?featherlight=false&width=90pc)
 
 # ការបង្កើត AWS CLI Profile នៅលើកុំព្យូទ័រផ្ទាល់ខ្លួន
 
@@ -63,7 +63,7 @@ aws configure set profile.badbob.aws_session_token <SESSION_TOKEN>
 aws configure --profile badbob
 ```
 
-![aws-cli-configure-profile](/images/6-aws-cli-configure-profile.png?featherlight=false&width=90pc)
+![aws-cli-configure-profile](../../../images/6-aws-cli-configure-profile.png?featherlight=false&width=90pc)
 
 # ការប្រតិបត្តិពាក្យបញ្ជា AWS CLI ដោយប្រើ IAM security credential បណ្តោះអាសន្ន
 
