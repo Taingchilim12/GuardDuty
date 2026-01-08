@@ -27,7 +27,7 @@ To simulate this final attack, you need to successfully retrieve the temporary I
    1. Access the System Manager Console at **us-west-2**.
    2. In the left-hand navigation bar, select **Fleet Manager**, and we will see a *managed EC2 instance* with the following name format - `GuardDuty-Example: Compromised Instance: Scenario 3` with status * *SSM Agent ping status** is `Online`.
 
-![6-system-manager-fleet-manager](/images/6-system-manager-fleet-manager.png?featherlight=false&width=90pc)
+![6-system-manager-fleet-manager](../images/6-system-manager-fleet-manager.png?featherlight=false&width=90pc)
 
    3. Proceed to use the **Session Manager** function by pressing the `Instance actions` button and selecting `Start Session`.
 
