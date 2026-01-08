@@ -27,7 +27,7 @@ To simulate this final attack, you need to successfully retrieve the temporary I
    1. Access the System Manager Console at **us-west-2**.
    2. In the left-hand navigation bar, select **Fleet Manager**, and we will see a *managed EC2 instance* with the following name format - `GuardDuty-Example: Compromised Instance: Scenario 3` with status * *SSM Agent ping status** is `Online`.
 
-![6-system-manager-fleet-manager](./images/6-system-manager-fleet-manager.png?featherlight=false&width=90pc)
+![6-system-manager-fleet-manager](../../images/6-system-manager-fleet-manager.png?featherlight=false&width=90pc)
 
    3. Proceed to use the **Session Manager** function by pressing the `Instance actions` button and selecting `Start Session`.
 
@@ -44,7 +44,7 @@ To simulate this final attack, you need to successfully retrieve the temporary I
    2. **Secret Access Key**
    3. **Session Token**
 
-![system-manager-instance-session-start](/images/6-system-manager-instance-session-start.png?featherlight=false&width=90pc)
+![system-manager-instance-session-start](../../images/6-system-manager-instance-session-start.png?featherlight=false&width=90pc)
 
 #### Create AWS CLI Profile on PC
 
@@ -65,7 +65,7 @@ We can use the following command to perform a quick check to see if there is an 
 aws configure --profile badbob
 ```
 
-![aws-cli-configure-profile](/images/6-aws-cli-configure-profile.png?featherlight=false&width=90pc)
+![aws-cli-configure-profile](../../images/6-aws-cli-configure-profile.png?featherlight=false&width=90pc)
 
 #### Execute AWS CLI statements using IAM security credential temporarily
 Using the **AWS CLI** statements below, we make API calls to various AWS services.
