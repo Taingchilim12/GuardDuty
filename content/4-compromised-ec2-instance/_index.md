@@ -28,7 +28,7 @@ GuardDuty Remediation | ID: 1xx: GuardDuty discovered an EC2 instance (Instance 
 - [Review questions](#review-questions)
 
 #### Architecture overview
-![architecture-overview](/images/4-architecture-overview.png?featherlight=false&width=60pc)
+![architecture-overview](../images/4-architecture-overview.png?featherlight=false&width=60pc)
 
 1. An *EC2 compromised instance* sends pings to the EIP address of a malicious EC2 instance. That EIP address has been added to **Custom Threat List**.
 2. GuardDuty conducts monitoring of VPC Flow Logs (including CloudTrail and DNS Logs) and situation analysis based on Machine Learning, **Custom Threat List**, and others.
@@ -49,7 +49,7 @@ While you can see these Findings from the GuardDuty Console, most customers want
 1. Access GuardDuty Console at **us-west-2**
 2. We should see a Finding with the following format `UnauthorizedAccess:EC2/MaliciousIPCaller.Custom`.
 
-![findings-ec2-malicous-ip-caller](/images/4-findings-ec2-malicous-ip-caller.png?featherlight=false&width=90pc)
+![findings-ec2-malicous-ip-caller](../images/4-findings-ec2-malicous-ip-caller.png?featherlight=false&width=90pc)
 
 3. If there isn't any Finding, proceed to press the Refresh button and wait.
 
@@ -59,7 +59,7 @@ While you can see these Findings from the GuardDuty Console, most customers want
 1. In your environment, this type of Finding indicates that an EC2 instance is communicating to an IP address (added to **Threat Lists**).
 2. Select **Lists** in the navigation bar (left-hand side) to see the **Threat List** that Alice added previously - `Example-Threat-List`.
 
-![guardduty-lists](/images/4-guardduty-lists.png?featherlight=false&width=90pc)
+![guardduty-lists](../images/4-guardduty-lists.png?featherlight=false&width=90pc)
 
 > GuardDuty uses Threat Intelligence systems provided by the AWS Security team and 3rd parties such as *ProofPoint* and *CrowdStike*. You can extend GuardDuty's visibility by manually configuring the Trusted IP Lists (**Trusted IP Lists**) and the Threat Lists (**Threat Lists**). If you have set up GuardDuty under the Admin/Member structure, from the GuardDuty Admin account you can manage the lists above and let the Members accounts inherit. By default, Members accounts will not be able to edit these lists.
 
@@ -71,17 +71,17 @@ Alice uses the EventBridge Event Rules to notify you of the Findings along with 
 1. Access the EventBridge Console at **us-west-2**.
 2. In the left-hand navigation bar, under **Events**, select **Rules**. You will see 3 rules have been set up (by CloudFormation Template), starting with a prefix of the form `GuardDuty-Event`.
 
-![eventbridge-events-rules](/images/4-eventbridge-events-rules.png?featherlight=false&width=90pc)
+![eventbridge-events-rules](../images/4-eventbridge-events-rules.png?featherlight=false&width=90pc)
 
 3. Proceed to select the rule named `GuardDuty-Event-EC2-MaliciousIPCaller`.
 
-![eventbridge-event-ec2-malicious-ip-caller](/images/4-eventbridge-event-ec2-malicious-ip-caller.png?featherlight=false&width=90pc)
+![eventbridge-event-ec2-malicious-ip-caller](../images/4-eventbridge-event-ec2-malicious-ip-caller.png?featherlight=false&width=90pc)
 
 4. You will easily notice that there are 2 targets in the **Targets** area.
    1. **Lambda Function**
    2. **SNS Topic**: Proceed to send E-mail notifications to you based on data provided by EventBridge Event Rule. Instead of the entire JSON data being used, by using **Input Transformer**, Alice customized the message content.
 
-![eventbridge-event-ec2-malicious-ip-caller-targets](/images/4-eventbridge-event-ec2-malicious-ip-caller-targets.png?featherlight=false&width=90pc)
+![eventbridge-event-ec2-malicious-ip-caller-targets](../images/4-eventbridge-event-ec2-malicious-ip-caller-targets.png?featherlight=false&width=90pc)
 
 ---
 
@@ -92,11 +92,11 @@ The Lambda Function is the key that holds the logic to perform the steps of the 
 To test the Remediation process:
 1. From the `GuardDuty-Event-EC2-MaliciousIPCaller` rule, in the **Targets** area, in the **Type** section is Lambda Function, we search for the corresponding **Resource Name**.
 
-![eventbridge-event-ec2-malicious-ip-caller-targets-lambda](/images/4-eventbridge-event-ec2-malicious-ip-caller-targets-lambda.png?featherlight=false&width=90pc)
+![eventbridge-event-ec2-malicious-ip-caller-targets-lambda](../images/4-eventbridge-event-ec2-malicious-ip-caller-targets-lambda.png?featherlight=false&width=90pc)
 
 2. At the Lambda Function console, search for **Resource Name** following the previous step.
 
-![lambda-Remediation-EC2MaliciousIPCaller](/images/4-lambda-Remediation-EC2MaliciousIPCaller.png?featherlight=false&width=90pc)
+![lambda-Remediation-EC2MaliciousIPCaller](../images/4-lambda-Remediation-EC2MaliciousIPCaller.png?featherlight=false&width=90pc)
 
 3. We can look at some items
    1. Configuration
@@ -105,7 +105,7 @@ To test the Remediation process:
    2. Permissions
    3. Monitoring
 
-![lambda-Remediation-EC2MaliciousIPCaller-overview](/images/4-lambda-Remediation-EC2MaliciousIPCaller-overview.png?featherlight=false&width=90pc)
+![lambda-Remediation-EC2MaliciousIPCaller-overview](../images/4-lambda-Remediation-EC2MaliciousIPCaller-overview.png?featherlight=false&width=90pc)
 
 ---
 
@@ -115,18 +115,18 @@ To ensure the results of the Remediation process, we need to see if the EC2 inst
 1. Access the EC2 console at **us-west-2**.
 2. Select `Instances (Running)`, they will see 3 EC2 instances with prefixes starting with the following format `GuardDuty-Example`.
 
-![ec2-running](/images/4-ec2-running.png?width=90pc)
+![ec2-running](../images/4-ec2-running.png?width=90pc)
 
 3. Based on the instance ID from GuardDuty Finding or the E-mail message, we choose the corresponding EC2 instance - `GuardDuty-Example: Compromised Instance: Scenario 1`.
 
-![guardduty-finding-MaliciousIPCaller-target](/images/4-guardduty-finding-MaliciousIPCaller-target.png?featherlight=false&width=90pc)
+![guardduty-finding-MaliciousIPCaller-target](../images/4-guardduty-finding-MaliciousIPCaller-target.png?featherlight=false&width=90pc)
 
-![ec2-compromised-scenario-1](/images/4-ec2-compromised-scenario-1.png?featherlight=false&width=90pc)
+![ec2-compromised-scenario-1](../images/4-ec2-compromised-scenario-1.png?featherlight=false&width=90pc)
 
 4. After the Remediation process is completed, we will check **Security Group** of this *EC2 compromised instance*, which will have the same name format as `ForensicSecurityGroup`.
 5. `ForensicSecurityGroup` will not have any `Ingress/Egress` rules containing IP addresses in `Example-Threat-List`.
 
-![ec2-compromised-scenario-1-security-group](/images/4-ec2-compromised-scenario-1-security-group.png?featherlight=false&width=90pc)
+![ec2-compromised-scenario-1-security-group](../images/4-ec2-compromised-scenario-1-security-group.png?featherlight=false&width=90pc)
 
 #### Review questions
 1. What data source was used by GuardDuty to identify this threat?
