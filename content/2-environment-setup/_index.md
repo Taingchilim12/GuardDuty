@@ -29,11 +29,11 @@ pre : " <b> 2. </b> "
 1. Sign in to AWS Console, and access the [GuardDuty] service (https://us-west-2.console.aws.amazon.com/guardduty/home).
 2. Start by selecting **Get Started**.
 
-![guardduty-get-started](/images/2-guardduty-get-started.png?featherlight=false&width=90pc)
+![guardduty-get-started](../images/2-guardduty-get-started.png?featherlight=false&width=90pc)
 
 3. For new accounts, AWS will give us a 30-day trial, to start using, click the `Enable GuardDuty` button.
 
-![guardduty-enable](/images/2-guardduty-enable.png?featherlight=false&width=90pc)
+![guardduty-enable](../images/2-guardduty-enable.png?featherlight=false&width=90pc)
 
 ---
 
@@ -47,17 +47,17 @@ pre : " <b> 2. </b> "
 4. On the `Parameters` page, we will enter some required information as follows:
    1. `EmailAddress`: Personal Email account to be able to receive notifications.
 
-![cloudformation-stack-specify-parameters](/images/2-cloudformation-stack-specify-parameters.png?featherlight=false&width=90pc)
+![cloudformation-stack-specify-parameters](../images/2-cloudformation-stack-specify-parameters.png?featherlight=false&width=90pc)
 
 5. On the `Specify Stack Details` page, select the `Next` button.
 6. On the `Configure stack options` page, select the `Next` button.
 7. On the `Capabilities` page, proceed to accept (Acknowledge) to allow the Template to create IAM roles, and finally select the `Create Stack` button.
 
-![cloudformation-stack-create-complete](/images/2-cloudformation-stack-create-complete.png?featherlight=false&width=90pc)
+![cloudformation-stack-create-complete](../images/2-cloudformation-stack-create-complete.png?featherlight=false&width=90pc)
 
-![sns-notification-subscription-confirmation](/images/2-sns-notification-subscription-confirmation.png?featherlight=false&width=90pc)
+![sns-notification-subscription-confirmation](../images/2-sns-notification-subscription-confirmation.png?featherlight=false&width=90pc)
 
-![sns-notification-subscription-confirmation](/images/2-sns-notification-subscription-confirmation1.png?featherlight=false&width=90pc)
+![sns-notification-subscription-confirmation](../images/2-sns-notification-subscription-confirmation1.png?featherlight=false&width=90pc)
 
 Initial results will show 10 minutes after the CloudFormation Stack setup is completed.
 
