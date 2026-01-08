@@ -28,7 +28,7 @@ GuardDuty Remediation | ID: 1xx: GuardDuty discovered an EC2 instance (Instance 
 - [សំណួររំលឹក](#សំណួររំលឹក)
 
 #### ទិដ្ឋភាពទូទៅនៃស្ថាបត្យកម្ម
-![architecture-overview](/images/4-architecture-overview.png?featherlight=false&width=60pc)
+![architecture-overview](../../images/4-architecture-overview.png?featherlight=false&width=60pc)
 
 1. *ម៉ាស៊ីន EC2 ដែលត្រូវបានគ្រប់គ្រង* បញ្ជូនកញ្ចប់ ping ទៅកាន់អាសយដ្ឋាន EIP របស់ម៉ាស៊ីន EC2 គ្រោះថ្នាក់។ អាសយដ្ឋាន EIP នោះត្រូវបានបន្ថែមនៅក្នុង **បញ្ជីគំរាមកំហែងផ្ទាល់ខ្លួន**។
 
@@ -56,7 +56,7 @@ GuardDuty Remediation | ID: 1xx: GuardDuty discovered an EC2 instance (Instance 
 1. ចូលទៅកាន់ GuardDuty Console នៅ **us-west-2**
 2. យើងនឹងឃើញ Finding មួយដែលមានទម្រង់ដូចខាងក្រោម `UnauthorizedAccess:EC2/MaliciousIPCaller.Custom`។
 
-![findings-ec2-malicous-ip-caller](/images/4-findings-ec2-malicous-ip-caller.png?featherlight=false&width=90pc)
+![findings-ec2-malicous-ip-caller](../../images/4-findings-ec2-malicous-ip-caller.png?featherlight=false&width=90pc)
 
 3. ប្រសិនបើគ្មាន Finding ណាមួយទេ សូមចុចប៊ូតុង Refresh និងរង់ចាំ។
 
@@ -67,7 +67,7 @@ GuardDuty Remediation | ID: 1xx: GuardDuty discovered an EC2 instance (Instance 
 1. នៅក្នុងបរិស្ថានរបស់អ្នក ប្រភេទ Finding នេះបង្ហាញថា EC2 instance កំពុងធ្វើការទំនាក់ទំនងទៅកាន់អាសយដ្ឋាន IP (ដែលត្រូវបានបន្ថែមទៅក្នុង **Threat Lists**)។
 2. ជ្រើសរើស **Lists** នៅលើរបារបញ្ជាការ (ខាងឆ្វេង) ដើម្បីមើល **Threat List** ដែល Alice បានបន្ថែមពីមុន - `Example-Threat-List`។
 
-![guardduty-lists](/images/4-guardduty-lists.png?featherlight=false&width=90pc)
+![guardduty-lists](../../images/4-guardduty-lists.png?featherlight=false&width=90pc)
 
 > GuardDuty ប្រើប្រាស់ប្រព័ន្ធ Threat Intelligence ដែលផ្តល់ដោយក្រុម AWS Security និងភាគីទីបី ដូចជា *ProofPoint* និង *CrowdStike*។ អ្នកអាចពង្រីកការមើលឃើញរបស់ GuardDuty ដោយការកំណត់រចនាសម្ព័ន្ធបញ្ជី IP ដែលទុកចិត្តបាន (**Trusted IP Lists**) និងបញ្ជីគំរាមកំហែង (**Threat Lists**) ដោយខ្លួនឯង។ ប្រសិនបើអ្នកបានរៀបចំ GuardDuty តាមរចនាសម្ព័ន្ធ Admin/Member ពីគណនី GuardDuty Admin អ្នកអាចគ្រប់គ្រងបញ្ជីខាងលើ និងអនុញ្ញាតឱ្យគណនី Members ទទួលបានការកំណត់ទាំងនោះ។ ជាលំនាំដើម គណនី Members នឹងមិនមានសិទ្ធិកែប្រែបញ្ជីទាំងនេះទេ។
 
@@ -80,17 +80,17 @@ Alice ប្រើប្រាស់ EventBridge Event Rules ដើម្បី�
 1. ចូលទៅកាន់ EventBridge Console នៅក្នុង **us-west-2**
 2. នៅក្នុងរបារនាំផ្លូវខាងឆ្វេង ក្រោម **Events** ជ្រើសរើស **Rules**។ អ្នកនឹងឃើញច្បាប់ចំនួន 3 ដែលត្រូវបានបង្កើត (ដោយ CloudFormation Template) ដែលចាប់ផ្តើមដោយបុព្វបទ `GuardDuty-Event`។
 
-![eventbridge-events-rules](/images/4-eventbridge-events-rules.png?featherlight=false&width=90pc)
+![eventbridge-events-rules](../../images/4-eventbridge-events-rules.png?featherlight=false&width=90pc)
 
 3. ជ្រើសរើសច្បាប់ដែលមានឈ្មោះ `GuardDuty-Event-EC2-MaliciousIPCaller`។
 
-![eventbridge-event-ec2-malicious-ip-caller](/images/4-eventbridge-event-ec2-malicious-ip-caller.png?featherlight=false&width=90pc)
+![eventbridge-event-ec2-malicious-ip-caller](../../images/4-eventbridge-event-ec2-malicious-ip-caller.png?featherlight=false&width=90pc)
 
 4. អ្នកនឹងឃើញគោលដៅចំនួន 2 នៅក្នុងផ្នែក **Targets**។
    1. **Lambda Function**
    2. **SNS Topic**: ផ្ញើការជូនដំណឹងតាមអ៊ីមែលទៅអ្នកដោយផ្អែកលើទិន្នន័យដែលផ្តល់ដោយ EventBridge Event Rule។ ជំនួសឱ្យការប្រើទិន្នន័យ JSON ទាំងអស់ Alice បានប្តូរខ្លឹមសារនៃការជូនដំណឹងដោយប្រើ **Input Transformer**។
 
-![eventbridge-event-ec2-malicious-ip-caller-targets](/images/4-eventbridge-event-ec2-malicious-ip-caller-targets.png?featherlight=false&width=90pc)
+![eventbridge-event-ec2-malicious-ip-caller-targets](../../images/4-eventbridge-event-ec2-malicious-ip-caller-targets.png?featherlight=false&width=90pc)
 
 ---
 
@@ -101,11 +101,11 @@ Lambda Function គឺជាគន្លឹះដែលមានតក្កវ�
 ដើម្បីពិនិត្យមើលដំណើរការ Remediation:
 1. ពីច្បាប់ `GuardDuty-Event-EC2-MaliciousIPCaller` នៅក្នុងផ្នែក **Targets** ក្នុងប្រភេទ Lambda Function រកមើល **Resource Name** ដែលត្រូវគ្នា។
 
-![eventbridge-event-ec2-malicious-ip-caller-targets-lambda](/images/4-eventbridge-event-ec2-malicious-ip-caller-targets-lambda.png?featherlight=false&width=90pc)
+![eventbridge-event-ec2-malicious-ip-caller-targets-lambda](../../images/4-eventbridge-event-ec2-malicious-ip-caller-targets-lambda.png?featherlight=false&width=90pc)
 
 2. នៅក្នុង Lambda Function console ស្វែងរក **Resource Name** ពីជំហានមុន។
 
-![lambda-Remediation-EC2MaliciousIPCaller](/images/4-lambda-Remediation-EC2MaliciousIPCaller.png?featherlight=false&width=90pc)
+![lambda-Remediation-EC2MaliciousIPCaller](../../images/4-lambda-Remediation-EC2MaliciousIPCaller.png?featherlight=false&width=90pc)
 
 3. យើងអាចពិនិត្យមើលផ្នែកមួយចំនួន
    1. Configuration
@@ -114,7 +114,7 @@ Lambda Function គឺជាគន្លឹះដែលមានតក្កវ�
    2. Permissions
    3. Monitoring
 
-![lambda-Remediation-EC2MaliciousIPCaller-overview](/images/4-lambda-Remediation-EC2MaliciousIPCaller-overview.png?featherlight=false&width=90pc)
+![lambda-Remediation-EC2MaliciousIPCaller-overview](../../images/4-lambda-Remediation-EC2MaliciousIPCaller-overview.png?featherlight=false&width=90pc)
 
 ---
 
@@ -125,18 +125,18 @@ Lambda Function គឺជាគន្លឹះដែលមានតក្កវ�
 1. ចូលទៅកាន់ EC2 console នៅក្នុង **us-west-2**។
 2. ជ្រើសរើស `Instances (Running)` អ្នកនឹងឃើញ EC2 instance ចំនួន 3 ដែលចាប់ផ្តើមដោយបុព្វបទ `GuardDuty-Example`។
 
-![ec2-running](/images/4-ec2-running.png?width=90pc)
+![ec2-running](../../images/4-ec2-running.png?width=90pc)
 
 3. ដោយផ្អែកលើ instance ID ពី GuardDuty Finding ឬការជូនដំណឹងតាមអ៊ីមែល យើងជ្រើសរើស EC2 instance ដែលត្រូវគ្នា - `GuardDuty-Example: Compromised Instance: Scenario 1`។
 
-![guardduty-finding-MaliciousIPCaller-target](/images/4-guardduty-finding-MaliciousIPCaller-target.png?featherlight=false&width=90pc)
+![guardduty-finding-MaliciousIPCaller-target](../../images/4-guardduty-finding-MaliciousIPCaller-target.png?featherlight=false&width=90pc)
 
-![ec2-compromised-scenario-1](/images/4-ec2-compromised-scenario-1.png?featherlight=false&width=90pc)
+![ec2-compromised-scenario-1](../../images/4-ec2-compromised-scenario-1.png?featherlight=false&width=90pc)
 
 4. បន្ទាប់ពីដំណើរការ Remediation បានបញ្ចប់ យើងនឹងពិនិត្យមើល **Security Group** នៃ *EC2 compromised instance* នេះ ដែលនឹងមានឈ្មោះដូច `ForensicSecurityGroup`។
 5. `ForensicSecurityGroup` នឹងគ្មានច្បាប់ `Ingress/Egress` ណាមួយដែលមាន IP address នៅក្នុង `Example-Threat-List`។
 
-![ec2-compromised-scenario-1-security-group](/images/4-ec2-compromised-scenario-1-security-group.png?featherlight=false&width=90pc)
+![ec2-compromised-scenario-1-security-group](../../images/4-ec2-compromised-scenario-1-security-group.png?featherlight=false&width=90pc)
 
 #### សំណួររំលឹក
 1. តើប្រភពទិន្នន័យណាដែល GuardDuty បានប្រើដើម្បីកំណត់អត្តសញ្ញាណការគំរាមកំហែងនេះ?
