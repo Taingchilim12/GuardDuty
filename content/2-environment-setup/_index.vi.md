@@ -29,7 +29,7 @@ pre : " <b> 2. </b> "
 
 3. សម្រាប់គណនីថ្មី AWS នឹងផ្តល់ឱ្យយើង 30 ថ្ងៃសាកល្បង, ដើម្បីចាប់ផ្តើមប្រើប្រាស់ សូមចុចប៊ូតុង `Enable GuardDuty`។
 
-![guardduty-enable](../images/2-guardduty-enable.png?featherlight=false&width=90pc)
+![guardduty-enable](../../images/2-guardduty-enable.png?featherlight=false&width=90pc)
 
 ---
 
@@ -49,11 +49,11 @@ pre : " <b> 2. </b> "
 6. នៅទំព័រ `Configure stack options`, ជ្រើសរើសប៊ូតុង `Next`។
 7. នៅទំព័រ `Capabilities`, យល់ព្រម (Acknowledge) អនុញ្ញាតឱ្យ Template បង្កើត IAM roles, ហើយចុងក្រោយជ្រើសរើសប៊ូតុង `Create Stack`។
 
-![cloudformation-stack-create-complete](../images/2-cloudformation-stack-create-complete.png?featherlight=false&width=90pc)
+![cloudformation-stack-create-complete](../../images/2-cloudformation-stack-create-complete.png?featherlight=false&width=90pc)
 
-![sns-notification-subscription-confirmation](../images/2-sns-notification-subscription-confirmation.png?featherlight=false&width=90pc)
+![sns-notification-subscription-confirmation](../../images/2-sns-notification-subscription-confirmation.png?featherlight=false&width=90pc)
 
-![sns-notification-subscription-confirmation](../images/2-sns-notification-subscription-confirmation1.png?featherlight=false&width=90pc)
+![sns-notification-subscription-confirmation](../../images/2-sns-notification-subscription-confirmation1.png?featherlight=false&width=90pc)
 
 លទ្ធផលដំបូងនឹងចាប់ផ្តើមបង្ហាញក្នុងរយៈពេល 10 នាទីបន្ទាប់ពីការដំឡើង CloudFormation Stack បានបញ្ចប់។
 
